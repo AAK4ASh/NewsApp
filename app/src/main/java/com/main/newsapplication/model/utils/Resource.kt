@@ -4,6 +4,6 @@ package com.main.newsapplication.model.utils
 sealed class Resource<T>(val data:T?=null,val message:String?=null){
     // nested subclasses
     class Success<T>(data: T?):Resource<T>(data)
-    class Message<T>(data: T?,message: String?):Resource<T>(data,message)
+    class Error<T>(data: T?,message: String?):Resource<T>(data,message)
     class Loading<T>:Resource<T>()
 }
