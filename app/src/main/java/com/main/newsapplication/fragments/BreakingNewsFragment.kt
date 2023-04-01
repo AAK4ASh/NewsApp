@@ -11,6 +11,8 @@ import com.main.newsapplication.ARG_PARAM1
 import com.main.newsapplication.ARG_PARAM2
 import com.main.newsapplication.R
 import com.main.newsapplication.adapter.ArticleAdapter
+import com.main.newsapplication.databinding.ActivityMainBinding
+import com.main.newsapplication.databinding.FragmentBreakingNewsBinding
 import com.main.newsapplication.viewModel.NewsViewModel
 
 /**
@@ -21,9 +23,17 @@ import com.main.newsapplication.viewModel.NewsViewModel
 class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
 lateinit var viewModel:NewsViewModel
 lateinit var newsAdapter: ArticleAdapter
+    private lateinit var binding: FragmentBreakingNewsBinding
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentBreakingNewsBinding.inflate(inflater, R.layout.fragment_breaking_news, container, false)
+        return binding.root
 private fun setupRecyclerView(){
-   /* newsAdapter= ArticleAdapter()
-    rvBreakingNews.apply{}
+    newsAdapter= ArticleAdapter()
+    binding.rvBreakingNews.apply{}
     adapter=newsAdapter
     layoutManger=LinearLayoutManager(activity)
 }
@@ -35,5 +45,8 @@ private fun setupRecyclerView(){
         findNavController().navigator(R.id.action_breakingNewsFragment_to_articleFragment,bundle)
 
     }
-    newsAdapter*/
-}
+    newsAdapter
+
+
+
+    }

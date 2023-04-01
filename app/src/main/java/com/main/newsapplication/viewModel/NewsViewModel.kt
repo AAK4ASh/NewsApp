@@ -70,7 +70,7 @@ return Resource.Success(searchNewsResponse?:resultResponse)
 
     }
 }
-        return Resource.Error(response.message())
+        return com.bumptech.glide.load.engine.Resource<NewsResponse>(response.message())
     }
     fun insertArticle(article: Article)=viewModelScope.launch {
         newsRepository.upsert(article)

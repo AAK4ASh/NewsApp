@@ -4,8 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
-            name="article"
-            type="com.main.newsapplication.model.Article" >
+            name="articles"
+            type="com.main.newsapplication.model.Article"/>
     </data>
     <com.google.android.material.card.MaterialCardView
     android:layout_width="match_parent"
@@ -29,7 +29,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 android:scaleType="fitXY"
-                loadImage="@{article.urlToImage}"
+                loadImage="@{articles.urlToImage}"
                 tools:ignore="ContentDescription" />
             <ProgressBar
                 android:layout_width="match_parent"
